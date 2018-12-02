@@ -1,12 +1,10 @@
 # luno-swift
 
-============
-
-Unofficial iOS client for Luno API.
+Unofficial Swift iOS client for Luno API.
 
 ## Todo
 
-- Implement remaining API methods (authenticated calls)
+- Implement authenticated API methods
 - Unit Tests
 
 ## Usage
