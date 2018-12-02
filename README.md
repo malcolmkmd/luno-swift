@@ -7,6 +7,10 @@ Unofficial Swift iOS client for Luno API.
 - Implement authenticated API methods
 - Unit Tests
 
+## Example Projects
+
+To use the example project download the repo build and run the 'example' target. (Requires Xcode 10)
+
 ## Usage
 
 ```swift
@@ -30,6 +34,7 @@ class ExampleViewController: UIViewController {
             }
         }
     }
+
 }
 
 ```
