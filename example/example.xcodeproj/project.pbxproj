@@ -13,6 +13,7 @@
 		0184D2D021B46BD600097265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0184D2CF21B46BD600097265 /* Assets.xcassets */; };
 		0184D2D321B46BD600097265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0184D2D121B46BD600097265 /* LaunchScreen.storyboard */; };
 		0184D32D21B46C6100097265 /* Luno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184D32C21B46C6100097265 /* Luno.framework */; };
+		0184D35721B4D8C600097265 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0184D35621B4D8C600097265 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0184D2D221B46BD600097265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0184D2D421B46BD600097265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0184D32C21B46C6100097265 /* Luno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Luno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0184D35621B4D8C600097265 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Keys.plist; path = ../../Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				0184D2CF21B46BD600097265 /* Assets.xcassets */,
 				0184D2D121B46BD600097265 /* LaunchScreen.storyboard */,
 				0184D2D421B46BD600097265 /* Info.plist */,
+				0184D35621B4D8C600097265 /* Keys.plist */,
 			);
 			path = example;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0184D35721B4D8C600097265 /* Keys.plist in Resources */,
 				0184D2D321B46BD600097265 /* LaunchScreen.storyboard in Resources */,
 				0184D2D021B46BD600097265 /* Assets.xcassets in Resources */,
 				0184D2CE21B46BD400097265 /* Main.storyboard in Resources */,

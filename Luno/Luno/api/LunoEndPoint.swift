@@ -16,7 +16,7 @@ protocol LunoEndPoint {
     /// HTTP task e.g get, post
     var task: HTTPTask { get }
     /// Determines if authentication is needed for the specific end point. 
-    var authenticated: Bool { get }
+    var requiresAuthentication: Bool { get }
 }
 
 extension LunoEndPoint {
@@ -45,5 +45,17 @@ extension LunoEndPoint {
         }
 
         return request
+    }
+
+    func addAuthentication(auth: LunoAuth, toRequest request: inout URLRequest) {
+        let authString = "\(auth.key):\(auth.secret)"
+
+        guard let authData = authString.data(using: .utf8) else {
+            return
+        }
+
+        let base64AuthString = authData.base64EncodedString()
+        request.addValue("Basic \(base64AuthString)",
+            forHTTPHeaderField: "Authorization")
     }
 }

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+public struct LunoBalance: Decodable {
+    let balance: [LunoAccount]
+}

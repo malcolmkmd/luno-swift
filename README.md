@@ -9,7 +9,13 @@ Unofficial Swift iOS client for Luno API.
 
 ## Example Projects
 
-To use the example project download the repo build and run the 'example' target. (Requires Xcode 10)
+How to install:
+
+1. Download the repo
+2. Add a Property List file with the 'Keys.plist' (If committing to source control add this file to your .gitignore)
+3. Click on the Root dictionary and right-click to Add Row. Add a row for 'API_KEY' and another row for 'API_SECRET'
+4. Insert your API Key and Secret as the values
+5. Build and run.
 
 ## Usage
 

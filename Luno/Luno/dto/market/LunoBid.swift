@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum LunoBidError: String, Error {
+enum LunoBidError: String, Error {
     case volume
     case price
 

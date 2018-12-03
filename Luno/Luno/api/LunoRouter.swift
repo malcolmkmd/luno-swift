@@ -15,19 +15,36 @@ public typealias LunoRouterCompletion = (_ data: Data?,_ response: URLResponse?,
 /// Manages URLSession and URLSessionTasks.
 public final class LunoRouter {
 
+    enum LunoAuthError: String, Error {
+        case noAuth
+
+        public var localizedDescription: String {
+            return "No authentication was provided for end point that requires authentication."
+        }
+    }
+
     /// Default URL Session
     private let session = URLSession(configuration: .default)
     /// Task
     private var task: URLSessionTask?
 
     /// Performs a request to given LunoEndPoint.
-    func request(_ route: LunoEndPoint, completion: @escaping LunoRouterCompletion) throws {
+    func request(_ route: LunoEndPoint, auth: LunoAuth?=nil, completion: @escaping LunoRouterCompletion) throws {
 
         self.cancel()
         
         do {
-            let request = try route.buildRequest()
-            print(request.description)
+            // Build the request.
+            var request = try route.buildRequest()
+
+            // Add authentication if needed.
+            if let auth = auth, route.requiresAuthentication {
+                route.addAuthentication(auth: auth, toRequest: &request)
+            } else {
+                throw LunoAuthError.noAuth
+            }
+
+            // Create URLSession dataTask.
             task = session.dataTask(with: request) { data, response, error in
                 completion(data, response, error)
             }

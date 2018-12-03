@@ -26,6 +26,8 @@
 		0184D35021B46D1E00097265 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184D34E21B46D1E00097265 /* HTTPTask.swift */; };
 		0184D35121B46D1E00097265 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184D34F21B46D1E00097265 /* HTTPResponse.swift */; };
 		0184D35321B46D2700097265 /* URLArgumentEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184D35221B46D2700097265 /* URLArgumentEncoder.swift */; };
+		0184D35A21B4DBEE00097265 /* LunoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184D35921B4DBEE00097265 /* LunoAccount.swift */; };
+		0184D35C21B4DC5000097265 /* LunoBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184D35B21B4DC5000097265 /* LunoBalance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		0184D34E21B46D1E00097265 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		0184D34F21B46D1E00097265 /* HTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		0184D35221B46D2700097265 /* URLArgumentEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLArgumentEncoder.swift; sourceTree = "<group>"; };
+		0184D35921B4DBEE00097265 /* LunoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunoAccount.swift; sourceTree = "<group>"; };
+		0184D35B21B4DC5000097265 /* LunoBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunoBalance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +157,8 @@
 		0184D33321B46CDD00097265 /* dto */ = {
 			isa = PBXGroup;
 			children = (
-				0184D34121B46D0A00097265 /* marketData */,
+				0184D35821B4DBD200097265 /* account */,
+				0184D34121B46D0A00097265 /* market */,
 			);
 			path = dto;
 			sourceTree = "<group>";
@@ -161,15 +166,15 @@
 		0184D33421B46CE900097265 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				0184D33721B46CF900097265 /* LunoAccountAPI.swift */,
-				0184D33521B46CF900097265 /* LunoEndPoint.swift */,
-				0184D33621B46CF900097265 /* LunoMarketDataAPI.swift */,
 				0184D33821B46CF900097265 /* LunoRouter.swift */,
+				0184D33521B46CF900097265 /* LunoEndPoint.swift */,
+				0184D33721B46CF900097265 /* LunoAccountAPI.swift */,
+				0184D33621B46CF900097265 /* LunoMarketDataAPI.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
 		};
-		0184D34121B46D0A00097265 /* marketData */ = {
+		0184D34121B46D0A00097265 /* market */ = {
 			isa = PBXGroup;
 			children = (
 				0184D34721B46D1500097265 /* LunoBid.swift */,
@@ -179,7 +184,16 @@
 				0184D34421B46D1500097265 /* LunoTrade.swift */,
 				0184D34521B46D1500097265 /* LunoTrades.swift */,
 			);
-			path = marketData;
+			path = market;
+			sourceTree = "<group>";
+		};
+		0184D35821B4DBD200097265 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				0184D35921B4DBEE00097265 /* LunoAccount.swift */,
+				0184D35B21B4DC5000097265 /* LunoBalance.swift */,
+			);
+			path = account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +307,9 @@
 			files = (
 				0184D35021B46D1E00097265 /* HTTPTask.swift in Sources */,
 				0184D34A21B46D1500097265 /* LunoTrade.swift in Sources */,
+				0184D35C21B4DC5000097265 /* LunoBalance.swift in Sources */,
 				0184D33B21B46CF900097265 /* LunoAccountAPI.swift in Sources */,
+				0184D35A21B4DBEE00097265 /* LunoAccount.swift in Sources */,
 				0184D33F21B46D0300097265 /* LunoPair.swift in Sources */,
 				0184D34C21B46D1500097265 /* LunoOrderBook.swift in Sources */,
 				0184D33921B46CF900097265 /* LunoEndPoint.swift in Sources */,

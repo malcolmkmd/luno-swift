@@ -53,7 +53,7 @@ extension LunoAccountsAPI: LunoEndPoint {
         }
     }
 
-    var authenticated: Bool {
+    var requiresAuthentication: Bool {
         return true
     }
 

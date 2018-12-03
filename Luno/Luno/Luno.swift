@@ -8,6 +8,9 @@
 
 import Foundation
 
+/// API Key and Secret tuple 
+public typealias LunoAuth = (key: String, secret: String)
+
 /// Luno API Client
 public final class Luno {
 
@@ -15,10 +18,8 @@ public final class Luno {
 
     /// API Router 
     private let router = LunoRouter()
-    /// Luno API Key
-    private let apiKey: String
-    /// Luno API Secret
-    private let secret: String
+    /// Luno Auth
+    private let auth: LunoAuth
 
     // MARK: - Initialiser
 
@@ -27,8 +28,7 @@ public final class Luno {
     /// - Parameter secret: Secret attained from https://www.luno.com/wallet/settings/api_keys (ensure that you do not commit this secret).
     public init(usingAPIKey apiKey: String,
          andSecret secret: String) {
-        self.apiKey = apiKey
-        self.secret = secret
+        self.auth = (apiKey, secret)
     }
 
     // MARK: - MARKET DATA 
@@ -79,6 +79,17 @@ public final class Luno {
                             completion: completion)
     }
 
+    // MARK: - ACCOUNT
+
+    /// Return the list of all accounts and their respective balances.
+    /// - Parameter balance: Account balance
+    /// - Parameter error: Localized error description.
+    public func balance(completion: @escaping (_ balance: LunoBalance?, _ error: String?) -> Void) {
+        self.performRequest(endPoint: LunoAccountsAPI.balance,
+                            auth: self.auth,
+                            completion: completion)
+    }
+
 }
 
 // MARK: - Request Helper Method
@@ -88,12 +99,12 @@ extension Luno {
     /// - Parameter endPoint: LunoEndPoint from which the request will be built.
     /// - Parameter decodable: Decoded model returned with the response;
     /// - Parameter error: Localized error description.
-    private func performRequest<EndPoint: LunoEndPoint, T: Decodable>(endPoint: EndPoint,
+    private func performRequest<EndPoint: LunoEndPoint, T: Decodable>(endPoint: EndPoint, auth: LunoAuth?=nil,
                                                                       completion: @escaping (_ decodable: T?, _ error: String?) -> Void) {
         do {
 
             // Perform request.
-            try router.request(endPoint) { (data, response, error) in
+            try router.request(endPoint, auth: auth) { (data, response, error) in
 
                 // Check that error is nil.
                 if error != nil {

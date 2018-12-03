@@ -49,8 +49,8 @@ extension LunoMarketDataAPI: LunoEndPoint {
         }
     }
 
-    var authenticated: Bool {
-        return false
+    var requiresAuthentication: Bool {
+        return false 
     }
     
 }

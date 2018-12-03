@@ -76,8 +76,8 @@ class ViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        lunoClient = Luno.init(usingAPIKey: "",
-                               andSecret: "")
+        lunoClient = Luno.init(usingAPIKey: valueForAPIKey(keyname: "API_KEY"),
+                               andSecret: valueForAPIKey(keyname:"API_SECRET"))
     }
 
     // MARK: - Button Action Handler
@@ -166,9 +166,20 @@ class ViewController: UIViewController {
 
     }
 
+    // Helper method to retrieve keys from plist file.
+    private func valueForAPIKey(keyname:String) -> String {
+
+        let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist")
+        let plist = NSDictionary(contentsOfFile: filePath!)
+        let value:String = plist?.object(forKey: keyname) as! String
+        return value
+
+    }
+
 }
 
 extension UIButton {
+    // Helper method to style UIButton
     func styleLunoButton() {
         self.layer.cornerRadius = 6
         self.layer.borderWidth = 1
