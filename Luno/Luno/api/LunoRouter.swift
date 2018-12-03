@@ -40,7 +40,7 @@ public final class LunoRouter {
             // Add authentication if needed.
             if let auth = auth, route.requiresAuthentication {
                 route.addAuthentication(auth: auth, toRequest: &request)
-            } else {
+            } else if route.requiresAuthentication {
                 throw LunoAuthError.noAuth
             }
 
